@@ -1,6 +1,6 @@
-ENV := dev.env
+ENVIRONMENT := dev.env
 
-include $(ENV)
+include $(ENVIRONMENT)
 export
 
 
@@ -26,4 +26,10 @@ clean: ## Remove running containers, images, volumes and networks
 	@docker-compose down -v --remove-orphans
 	@docker rmi $(ALKIS_PG_IMAGE):$(ALKIS_PG_TAG)
 
-.PHONY: help build run stop shell clean
+init-db: ## Initialize the database using startup.sh script
+	@docker-compose exec -T $(ALKIS_PG_IMAGE) bash /alkis_pg/scripts/init_db.sh
+
+drop-db: ## Drop the database
+	@docker-compose exec -T $(ALKIS_PG_IMAGE) bash /alkis_pg/scripts/drop_db.sh
+
+.PHONY: help build run stop shell clean init-db drop-db
