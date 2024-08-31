@@ -1,6 +1,6 @@
 # alkis_pg
 
-PostgreSQL database for ALKIS data using the guidelines of the AdV (Arbeitsgemeinschaft der Vermessungsverwaltungen)
+PostGIS database for ALKIS data using the guidelines of the AdV (Arbeitsgemeinschaft der Vermessungsverwaltungen)
 
 ## Author
 
