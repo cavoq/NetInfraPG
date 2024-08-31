@@ -1,0 +1,26 @@
+-- Create Flurstueck Table
+CREATE TABLE Flurstueck (
+    oid VARCHAR(18) PRIMARY KEY,                  
+    aktualit DATE,                                
+    geometrie GEOMETRY(MultiPolygon, 4326),
+    idflurst VARCHAR(16),                     
+    flaeche DECIMAL(12, 2),                     
+    flstkennz VARCHAR(20),                     
+    land VARCHAR(254),                           
+    landschl VARCHAR(2),                          
+    gemarkung VARCHAR(254),                      
+    gemaschl VARCHAR(6),                          
+    flur VARCHAR(254),                            
+    flurschl VARCHAR(9),                         
+    flstnrzae VARCHAR(5),                         
+    flstnrnen VARCHAR(4),                         
+    regbezirk VARCHAR(254),                       
+    regbezschl VARCHAR(3),                        
+    kreis VARCHAR(254),                           
+    kreisschl VARCHAR(5),                         
+    gemeinde VARCHAR(254),                        
+    gmdschl VARCHAR(8),                          
+    abwrecht VARCHAR(31),                        
+    lagebeztxt VARCHAR(254),                      
+    tntxt VARCHAR(254)                            
+);
