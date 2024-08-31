@@ -1,6 +1,6 @@
-ENVIRONMENT := test.env
+ENV := dev.env
 
-include $(ENVIRONMENT)
+include $(ENV)
 export
 
 
