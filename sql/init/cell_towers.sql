@@ -13,5 +13,5 @@ CREATE TABLE IF NOT EXISTS iot.cell_towers (
     created TIMESTAMP NOT NULL,
     updated TIMESTAMP,
     average_signal DECIMAL(5, 2),
-    PRIMARY KEY (MCC, MNC, LAC_TAC_NID, CID)
+    PRIMARY KEY (mcc, net, area, cell)
 );

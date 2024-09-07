@@ -1,10 +1,10 @@
 FROM postgis/postgis:16-3.4
 
-WORKDIR /alkis_pg
+WORKDIR /netinfra_pg
 
-COPY ./scripts/ /alkis_pg/scripts/
-RUN chmod +x /alkis_pg/scripts/*.sh
+COPY ./scripts/ /netinfra_pg/scripts/
+RUN chmod +x /netinfra_pg/scripts/*.sh
 
-COPY ./sql/ /alkis_pg/sql/
+COPY ./sql/ /netinfra_pg/sql/
 
 EXPOSE 5432

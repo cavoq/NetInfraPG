@@ -2,11 +2,11 @@
 
 export PGPASSWORD=$POSTGRES_PASSWORD
 
-SQL_DIR=/alkis_pg/sql
+SQL_DIR=/netinfra_pg/sql
 
 # -- Replace default CRS of the database
 
-find /alkis_pg/sql/ -type f -name "*.sql" | while read -r file; do
+find /netinfra_pg/sql/ -type f -name "*.sql" | while read -r file; do
         sed -i "s/:DEFAULT_CRS/$DEFAULT_CRS/g" "$file"
 done
 
