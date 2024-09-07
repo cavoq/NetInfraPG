@@ -1,1 +1,0 @@
-© 2024 [David Stromberger]. All rights reserved. Unauthorized use, reproduction, or distribution of this software is prohibited.
