@@ -1,5 +1,5 @@
-CREATE SCHEMA IF NOT EXISTS iot;
-CREATE TABLE IF NOT EXISTS iot.cell_towers (
+CREATE SCHEMA IF NOT EXISTS cell_towers;
+CREATE TABLE IF NOT EXISTS cell_towers.cell_tower (
     radio VARCHAR(50) NOT NULL,
     mcc CHAR(3) NOT NULL,
     net CHAR(3) NOT NULL,
