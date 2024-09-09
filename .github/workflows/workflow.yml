@@ -38,6 +38,12 @@ jobs:
           "https://github.com/docker/compose/releases/download/v2.19.1/docker-compose-$(uname -s)-$(uname -m)" \
           -o /usr/local/bin/docker-compose
           sudo chmod +x /usr/local/bin/docker-compose
+      
+      - name: Build and start services
+        run: make run
 
       - name: Run check
         run: make check-db
+
+      - name: Clean up
+        run: make clean
