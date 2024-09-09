@@ -27,9 +27,14 @@ clean: ## Remove running containers, images, volumes and networks
 	@docker rmi $(IMAGE):$(TAG)
 
 init-db: ## Initialize the database
-	@docker-compose exec -T $(IMAGE) bash /alkis_pg/scripts/init_db.sh
+	@docker-compose exec -T $(IMAGE) bash /netinfra_pg/scripts/init_db.sh
 
 drop-db: ## Drop the database
-	@docker-compose exec -T $(IMAGE) bash /alkis_pg/scripts/drop_db.sh
+	@docker-compose exec -T $(IMAGE) bash /netinfra_pg/scripts/drop_db.sh
 
-.PHONY: help build run stop shell clean init-db drop-db
+print-db: ## Print the database
+	@docker-compose exec -T $(IMAGE) bash /netinfra_pg/scripts/print_db.sh
+
+check-db: init-db print-db drop-db ## Check by initializing, printing and dropping the database
+
+.PHONY: help build run stop shell clean init-db drop-db print-db test-db

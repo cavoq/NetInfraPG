@@ -13,7 +13,8 @@ done
 # -- Create the database
 
 echo "Creating database ${POSTGRES_DB}..."
-psql -U "$POSTGRES_USER" -d postgres -c "CREATE DATABASE \"$POSTGRES_DB\";"
+psql -U "$POSTGRES_USER" -d postgres -c "CREATE DATABASE \"$POSTGRES_DB\";" \
+        2>/dev/null || echo "Database ${POSTGRES_DB} already exists, skipping creation."
 
 # -- Initialize the database
 
@@ -26,4 +27,4 @@ for sql_file in $SQL_DIR/init/*.sql; do
         fi
 done
 
-unset $PGPASSWORD
+unset PGPASSWORD
