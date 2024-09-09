@@ -38,9 +38,11 @@ jobs:
           "https://github.com/docker/compose/releases/download/v2.19.1/docker-compose-$(uname -s)-$(uname -m)" \
           -o /usr/local/bin/docker-compose
           sudo chmod +x /usr/local/bin/docker-compose
-      
+
       - name: Build and start services
-        run: make run
+        run: |
+          make run \
+          docker-compose exec -T netinfra_pg bash -c "until pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}; do sleep 2; done"
 
       - name: Run check
         run: make check-db
